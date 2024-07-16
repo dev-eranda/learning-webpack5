@@ -24,7 +24,7 @@ module.exports = {
     optimization: {
         splitChunks: {
             chunks: 'all', // optimize all bundle .js file with libraries. (reduce sizes)
-            minSize: 3000  // separate 3KB lower libraries to separate bundle. ex: react, lodash _
+            minSize: 3000  // separate 3KB lower libraries to separate bundle. ex: react
         }
     },
     module: {
