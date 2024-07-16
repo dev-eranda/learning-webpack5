@@ -1,9 +1,5 @@
-// import helloWorld from './app.js'
-
-// helloWorld()
-
-function helloWorld() {
-    console.log('hello world');
-}
+import helloWorld from './app'
+import addImage from "./add-image";
 
 helloWorld()
+addImage()
