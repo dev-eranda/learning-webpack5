@@ -1,13 +1,13 @@
 const path = require('path');
-const TerserPlugin = require('terser-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+// const TerserPlugin = require('terser-webpack-plugin');
+// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
     output: {
-        filename: 'bundle.[contenthash].js',  // use "contenthash" for browser caching | md5 cache | Don't need contenthash in development mode
+        filename: 'bundle.js',  // use "contenthash" for browser caching | md5 cache | Don't need contenthash in development mode
         path: path.resolve(__dirname, './dist'),
         publicPath: '', // remove dist/ because we genarate new html file inside the dist/ falder
         // clean: {
@@ -16,16 +16,16 @@ module.exports = {
         // }  // clean dist/ only support Webpack higher than 5.20
     },
     mode: 'development',
-    // devServer: {
-    //     port: 9000,
-    //     static: {
-    //         directory: path.resolve(__dirname, './dist'),
-    //     },
-    //     devMiddleware: {
-    //         index: 'index.html',
-    //         writeToDisk: true, // Webpack dev server will explicitly write the generated files to the dist folder,
-    //     }
-    // },
+    devServer: {
+        port: 9000,
+        static: {
+            directory: path.resolve(__dirname, './dist'),
+        },
+        devMiddleware: {
+            index: 'index.html',
+            writeToDisk: true, // Webpack dev server will explicitly write the generated files to the dist folder,
+        }
+    },
     module: {
         rules: [
             {
@@ -54,7 +54,7 @@ module.exports = {
             {
                 test: /\.scss$/, // this rule for all .sass
                 use: [
-                    MiniCssExtractPlugin.loader, 'css-loader', "sass-loader"
+                    'style-loader', 'css-loader', "sass-loader"   // MiniCssExtractPlugin.loader
                 ]
             },
             {
@@ -79,14 +79,14 @@ module.exports = {
     plugins: [
         // use for reduce the bundle.js size (minification)
         // don't need minification in dev mode
-        new TerserPlugin(),
+        // new TerserPlugin(),
 
         // use "contenthash" for browser caching | md5 cache | 
         // Don't need mini css in dev mode
         // extract css into a separate bundle
-        new MiniCssExtractPlugin({
-            filename: 'styles.[contenthash].css'
-        }),
+        // new MiniCssExtractPlugin({
+        //     filename: 'styles.[contenthash].css'
+        // }),
 
         new CleanWebpackPlugin(),  // clean dist/ falder when run the "npm run build"
         // new CleanWebpackPlugin({

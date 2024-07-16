@@ -6,8 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-        'hello-world': './src/hello-world.js',
-        'kiwi': './src/kiwi.js',
+        'index': './src/index.js',
     },
     output: {
         // use "contenthash" for browser caching | md5 cache
@@ -20,7 +19,7 @@ module.exports = {
         //     keep: /\.css/  // keep all css file
         // }  // clean dist/ only support Webpack higher than 5.20
     },
-    mode: 'development',
+    mode: 'production',
     optimization: {
         splitChunks: {
             chunks: 'all', // optimize all bundle .js file with libraries. (reduce sizes)
@@ -99,21 +98,21 @@ module.exports = {
 
         //genarate multiple HTML pages
         new HtmlWebpackPlugin({
-            filename: 'hello-world.html', // genarated file name
-            chunks: ['hello-world'], // add entry point name to which page genarate as a HTML , this is array
-            title: 'Hello world',  // custom title
-            template: 'src/page-template.hbs',  //custom template
-            description: "Hello-world", //custom meta description
+            filename: 'index.html', // genarated file name
+            chunks: ['index'], // add entry point name to which page genarate as a HTML , this is array
+            title: 'Index',  // custom title
+            template: 'page-template.hbs',  //custom template
+            description: "index-page", //custom meta description
             minify: false // disable html minify
         }), // genarate new html file inside dist/
 
-        new HtmlWebpackPlugin({
-            filename: 'kiwi.html',
-            chunks: ['kiwi'],
-            title: 'Kiwi',
-            template: 'src/page-template.hbs',
-            description: "Kiwi",
-            minify: false
-        }),
+        // new HtmlWebpackPlugin({
+        //     filename: 'kiwi.html',
+        //     chunks: ['kiwi'],
+        //     title: 'Kiwi',
+        //     template: 'src/page-template.hbs',
+        //     description: "Kiwi",
+        //     minify: false
+        // }),
     ],
 };
