@@ -5,9 +5,12 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: {
+        'index': './src/index.js',
+        'kiwi': './src/kiwi.js',
+    },
     output: {
-        filename: 'bundle.js',  // use "contenthash" for browser caching | md5 cache | Don't need contenthash in development mode
+        filename: '[name].bundle.js',  // use "contenthash" for browser caching | md5 cache | Don't need contenthash in development mode
         path: path.resolve(__dirname, './dist'),
         publicPath: '', // remove dist/ because we genarate new html file inside the dist/ falder
         // clean: {
@@ -97,18 +100,18 @@ module.exports = {
         // }),
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            // chunks: ['hello-world'],
+            chunks: ['index'],
             title: 'index',  // custom title
-            template: './page-template.hbs',  //custom template
-            description: "index page", //custom meta description
+            template: 'page-template.hbs',  //custom template
+            description: "index-page", //custom meta description
         }), // genarate new html file inside dist/
 
-        // new HtmlWebpackPlugin({
-        //     filename: 'kiwi.html',
-        //     chunks: ['kiwi'],
-        //     title: 'Kiwi',
-        //     template: 'src/page-template.hbs',
-        //     description: "Kiwi",
-        // }),
+        new HtmlWebpackPlugin({
+            filename: 'kiwi.html',
+            chunks: ['kiwi'],
+            title: 'Kiwi',
+            template: 'page-template.hbs',
+            description: "kiwi-page",
+        }),
     ],
 };

@@ -112,7 +112,7 @@ module.exports = {
             chunks: ['kiwi'],
             title: 'Kiwi',
             template: 'page-template.hbs',
-            description: "Kiwi",
+            description: "kiwi-page",
             // minify: false
         }),
     ],
