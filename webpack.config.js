@@ -57,17 +57,17 @@ module.exports = {
                     'style-loader', 'css-loader', "sass-loader"
                 ]
             },
-            // {
-            //     test: /\.js$/, // this rule for use " buttonCssClass = 'hello-world-button';" (experimental js features)
-            //     exclude: '/node_modules/',
-            //     use: {
-            //         loader: 'babel-loader',
-            //         options: {
-            //             presets: ['@babel/env'],
-            //             plugins: ['@babel/plugin-proposal-class-properties']
-            //         }
-            //     }
-            // },
+            {
+                test: /\.js$/, // this rule for use " buttonCssClass = 'hello-world-button';" (experimental js features)
+                exclude: '/node_modules/',
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/env'],
+                        plugins: ['@babel/plugin-proposal-class-properties']
+                    }
+                }
+            },
             // {
             //     test: /\.hbs/, // handle .hbs template file to create index.html
             //     use: [

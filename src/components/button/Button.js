@@ -1,9 +1,10 @@
 import './button.scss'
 class Button {
+    buttonCssClass = 'button'
     render() {
         const button = document.createElement('button')
+        const body = document.querySelector('body')
         button.innerHTML = 'Click Me'
-        button.classList.add('button');
         button.onclick = function () {
             const p = document.createElement('p');
             p.innerHTML = "Nice Job";
@@ -11,8 +12,6 @@ class Button {
             body.appendChild(p);
         }
         button.classList.add(this.buttonCssClass);
-
-        const body = document.querySelector('body')
         body.appendChild(button)
     }
 }
