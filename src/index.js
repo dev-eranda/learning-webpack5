@@ -1,5 +1,4 @@
-import helloWorld from './app'
-import addImage from "./add-image";
+import Button from './components/button/Button'
 
-helloWorld()
-addImage()
+const button = new Button()
+button.render()

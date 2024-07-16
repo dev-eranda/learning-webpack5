@@ -45,18 +45,18 @@ module.exports = {
                 test: /\.txt/, // this rule for all .txt (asset/source)
                 type: 'asset/source'
             },
-            // {
-            //     test: /\.css$/, // this rule for all .css
-            //     use: [
-            //         'style-loader', 'css-loader'
-            //     ]
-            // },
-            // {
-            //     test: /\.scss$/, // this rule for all .sass
-            //     use: [
-            //         'style-loader', 'css-loader', "sass-loader"
-            //     ]
-            // },
+            {
+                test: /\.css$/, // this rule for all .css
+                use: [
+                    'style-loader', 'css-loader'
+                ]
+            },
+            {
+                test: /\.scss$/, // this rule for all .sass
+                use: [
+                    'style-loader', 'css-loader', "sass-loader"
+                ]
+            },
             // {
             //     test: /\.js$/, // this rule for use " buttonCssClass = 'hello-world-button';" (experimental js features)
             //     exclude: '/node_modules/',
