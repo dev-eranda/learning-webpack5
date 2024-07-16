@@ -7,6 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: {
         'index': './src/index.js',
+        'kiwi': './src/kiwi.js',
     },
     output: {
         // use "contenthash" for browser caching | md5 cache
@@ -23,7 +24,7 @@ module.exports = {
     optimization: {
         splitChunks: {
             chunks: 'all', // optimize all bundle .js file with libraries. (reduce sizes)
-            minSize: 3000  // separate 3KB lower libraries to separate bundle. ex: react
+            minSize: 3000  // separate 3KB lower libraries to separate bundle. ex: react, lodash _
         }
     },
     module: {
@@ -103,16 +104,16 @@ module.exports = {
             title: 'Index',  // custom title
             template: 'page-template.hbs',  //custom template
             description: "index-page", //custom meta description
-            minify: false // disable html minify
+            // minify: false // if you want disable html minify
         }), // genarate new html file inside dist/
 
-        // new HtmlWebpackPlugin({
-        //     filename: 'kiwi.html',
-        //     chunks: ['kiwi'],
-        //     title: 'Kiwi',
-        //     template: 'src/page-template.hbs',
-        //     description: "Kiwi",
-        //     minify: false
-        // }),
+        new HtmlWebpackPlugin({
+            filename: 'kiwi.html',
+            chunks: ['kiwi'],
+            title: 'Kiwi',
+            template: 'page-template.hbs',
+            description: "Kiwi",
+            // minify: false
+        }),
     ],
 };
