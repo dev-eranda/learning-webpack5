@@ -1,15 +1,15 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
-// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
     output: {
-        filename: 'bundle.js',  // use "contenthash" for browser caching | md5 cache | Don't need contenthash in development mode
+        filename: 'bundle.[contenthash].js',  // use "contenthash" for browser caching | md5 cache | Don't need contenthash in development mode
         path: path.resolve(__dirname, './dist'),
-        publicPath: 'dist/', // remove dist/ because we genarate new html file inside the dist/ falder
+        publicPath: '', // remove dist/ because we genarate new html file inside the dist/ falder
         // clean: {
         //     dry: true,
         //     keep: /\.css/  // keep all css file
@@ -54,7 +54,7 @@ module.exports = {
             {
                 test: /\.scss$/, // this rule for all .sass
                 use: [
-                    'style-loader', 'css-loader', "sass-loader"
+                    MiniCssExtractPlugin.loader, 'css-loader', "sass-loader"
                 ]
             },
             {
@@ -68,12 +68,12 @@ module.exports = {
                     }
                 }
             },
-            // {
-            //     test: /\.hbs/, // handle .hbs template file to create index.html
-            //     use: [
-            //         'handlebars-loader'
-            //     ]
-            // }
+            {
+                test: /\.hbs/, // handle .hbs template file to create index.html
+                use: [
+                    'handlebars-loader'
+                ]
+            }
         ]
     },
     plugins: [
@@ -84,24 +84,24 @@ module.exports = {
         // use "contenthash" for browser caching | md5 cache | 
         // Don't need mini css in dev mode
         // extract css into a separate bundle
-        // new MiniCssExtractPlugin({
-        //     filename: 'styles.[contenthash].css' 
-        // }), 
+        new MiniCssExtractPlugin({
+            filename: 'styles.[contenthash].css'
+        }),
 
-        // new CleanWebpackPlugin(),  // clean dist/ falder when run the "npm run build"
+        new CleanWebpackPlugin(),  // clean dist/ falder when run the "npm run build"
         // new CleanWebpackPlugin({
         //     cleanOnceBeforeBuildPatterns: [  // this clean all the file include "build"
         //         '**/*',
         //         path.join(process.cwd(), 'build/**/*'),
         //     ]
         // }),
-        // new HtmlWebpackPlugin({
-        //     filename: 'hello-world.html',
-        //     chunks: ['hello-world'],
-        //     title: 'Hello world',  // custom title
-        //     template: 'src/page-template.hbs',  //custom template
-        //     description: "Hello world", //custom meta description
-        // }), // genarate new html file inside dist/
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            // chunks: ['hello-world'],
+            title: 'index',  // custom title
+            template: './page-template.hbs',  //custom template
+            description: "index page", //custom meta description
+        }), // genarate new html file inside dist/
 
         // new HtmlWebpackPlugin({
         //     filename: 'kiwi.html',
