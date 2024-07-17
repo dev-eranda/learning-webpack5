@@ -4,7 +4,7 @@ const fs = require('fs')
 
 const app = express()
 
-app.use('/static', express.static(path.resolve(__dirname, '../dist'))) // get static file to server [*.js and *.css]
+app.use('/static', express.static(path.resolve(__dirname, '../dist'))) // get static file to server [*.js *.css
 
 app.get('/', function (req, res) {
     const pathToHtmlFile = path.resolve(__dirname, '../dist/index.html')
