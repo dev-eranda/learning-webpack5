@@ -31,9 +31,29 @@ Ensure you have the following installed:
 1. Clone the repository:
    ```sh
    git clone https://github.com/your-username/webpack5.git
-   cd webpack5 ```
-2. Install
-   ```npm install
-  # or
-  yarn install ```
+   cd webpack5
+   
+2. Install Dependencies
+   ```sh
+   npm install
+   # or
+   yarn install
+
+### NPM Scripts
+1. Start Development Server
+   ```sh
+   npm run dev
+   # or
+   yarn dev
+
+2. Build for Production
+   ```sh
+   npm run dev
+   # or
+   yarn dev
+
+
+
+
+
 
