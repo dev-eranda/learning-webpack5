@@ -1,0 +1,16 @@
+{
+    "extends": "eslint:recommended", // Extend ESLint's recommended rule set for basic linting rules
+    "parser": "@babel/eslint-parser", // Use babel-eslint as the parser to support parsing modern JavaScript features
+    "parserOptions": {
+        "ecmaVersion": 6, // Specify ECMAScript version 6 for modern syntax support
+        "requireConfigFile": false,
+        "sourceType": "module" // Specify 'module' as the source type to enable parsing of ES modules
+    },
+    "env": {
+        "node": true, // Enable Node.js environment for Node.js specific globals and APIs
+        "browser": true // Enable browser environment for browser specific globals and APIs
+    },
+    "rules": {
+        "no-console": 0 // Disable 'no-console' rule to allow the use of console.log() for debugging purposes
+    }
+}

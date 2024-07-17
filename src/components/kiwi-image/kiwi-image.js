@@ -2,7 +2,7 @@ import Kiwi from './kiwi.jpg';
 import './kiwi-image.scss';
 
 class KiwiImage {
-    render(){
+    render() {
         const img = document.createElement('img');
         img.src = Kiwi;
         img.alt = 'Kiwi';
@@ -10,7 +10,7 @@ class KiwiImage {
 
         const bodyDomElement = document.querySelector('body');
         bodyDomElement.appendChild(img);
-    }    
+    }
 }
-3
+
 export default KiwiImage;
