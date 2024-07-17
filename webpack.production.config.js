@@ -14,7 +14,7 @@ module.exports = {
         // [name] use the entry point name as bundle name "bundle.abc123.js => kiwi.abc123.js"
         filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, './dist'),
-        publicPath: '', // remove dist/ because we genarate new html file inside the dist/ falder
+        publicPath: '/static/',  // for express server read from this path [href=/static/style.123.css] and js
         // clean: {
         //     dry: true,
         //     keep: /\.css/  // keep all css file
@@ -104,7 +104,7 @@ module.exports = {
             title: 'Index',  // custom title
             template: 'page-template.hbs',  //custom template
             description: "index-page", //custom meta description
-            minify: false // if you want disable html minify
+            // minify: false // if you want disable html minify
         }), // genarate new html file inside dist/
 
         new HtmlWebpackPlugin({
@@ -113,7 +113,7 @@ module.exports = {
             title: 'Kiwi',
             template: 'page-template.hbs',
             description: "kiwi-page",
-            minify: false
+            // minify: false
         }),
     ],
 };
