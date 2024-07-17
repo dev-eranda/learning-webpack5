@@ -104,6 +104,7 @@ module.exports = {
             title: 'index',  // custom title
             template: 'page-template.hbs',  //custom template
             description: "index-page", //custom meta description
+            // minify: false
         }), // genarate new html file inside dist/
 
         new HtmlWebpackPlugin({
@@ -112,6 +113,7 @@ module.exports = {
             title: 'Kiwi',
             template: 'page-template.hbs',
             description: "kiwi-page",
+            // minify: false
         }),
     ],
 };
