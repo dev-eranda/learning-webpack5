@@ -1,53 +1,37 @@
-# Webpack 5 Project
+# Webpack
 
-## Overview
+**Developed By:** Eranda Samarasinghe
+<hr />
+
+## Project Backgroud and Overview
 This project demonstrates the use of Webpack 5 for module bundling, along with setting up an Express server to serve HTML pages and integrating jQuery. It also explores the use of Webpack 5's Module Federation for implementing Micro Frontends.
+<hr />
 
-## Technologies Used
-- **Node.js**
-- **HTML**
-- **jQuery**
-- **Express**
-- **Webpack 5**
-- **Webpack 5 Module Federation**
-- **Micro Frontends**
+## Project Goals
+The main objectives of this application are to:
 
-## Branches
+1. Get a solid foundation for learning advanced Webpack features.
+2. Integrate Webpack 5 with NodeJS and Express framework.
+3. Structure your code better with ES Modules and Webpack Code Splitting.
+4. Use Webpack for Single Page Applications as well as Multiple Page Applications.
+5. Master the new Module Federation feature introduced in Webpack 5.
+<hr />
 
-### Main Branches
-- **webpack5:** Base branch implementing Webpack 5 for module bundling.
-- **serve-html-pages-with-express:** Sets up an Express server to serve HTML pages.
-- **Module-Federation-with-Micro-Frontends:** Implements Micro Frontends using Webpack 5's Module Federation.
-- **integration-with-jquery:** Integrates jQuery into the existing setup.
+## Technical Details
+Core technologies used: 
 
-## Setup and Installation
+- **Node.js, HTML, jQuery, Express, Module Federation, Micro Frontends**
+<hr />
 
-### Prerequisites
-Ensure you have the following installed:
-- Node.js
-- npm or Yarn
-
-### Installation
-1. Clone the repository:
+## Installation
+1. Clone repository:
    ```sh
    git clone https://github.com/your-username/webpack5.git
-   cd webpack5
    
-2. Install Dependencies:
+2. Install dependencies:
    ```sh
    npm install
-   # or
-   yarn install
 
-### NPM Scripts
-1. Start Development Server:
+3. Start development server:
    ```sh
-   npm run dev
-   # or
-   yarn dev
-
-2. Build for Production:
-   ```sh
-   npm run dev
-   # or
-   yarn dev
+   npm run dev 
