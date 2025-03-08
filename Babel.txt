@@ -1,0 +1,14 @@
+✅ Babel Presets (Preconfigured Transformations)
+@babel/preset-env	Converts modern JavaScript (ES6+) into older versions for better browser support.
+@babel/preset-react	Enables JSX syntax for React. Allows writing <Component /> inside JavaScript.
+@babel/preset-typescript	Enables support for TypeScript inside Babel. Converts .ts and .tsx files to JavaScript.
+
+✅ Babel Plugins (For Specific Features)
+Plugin	What It Does
+@babel/plugin-transform-runtime	Optimizes code and prevents duplication of Babel helpers, reducing bundle size.
+@babel/plugin-proposal-class-properties	Allows defining class properties like state = {} inside class components (React).
+@babel/plugin-proposal-private-methods	Enables private class methods (#myMethod()) inside JavaScript classes.
+@babel/plugin-proposal-nullish-coalescing-operator	Enables ?? (nullish coalescing operator) for handling null and undefined.
+@babel/plugin-proposal-optional-chaining	Enables ?. (optional chaining) to avoid errors when accessing deep properties.
+@babel/plugin-syntax-dynamic-import	Allows using import() for lazy-loading modules (code splitting).
+@babel/plugin-proposal-decorators	Enables decorators (@decorator), used in frameworks like MobX and NestJS.

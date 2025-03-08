@@ -62,14 +62,10 @@ module.exports = {
         ],
       },
       {
-        test: /\.js$/, // this rule for use " buttonCssClass = 'hello-world-button';" (experimental js features)
-        exclude: '/node_modules/',
+        test: /\.(js|jsx)$/, // Matches JavaScript & JSX files
+        exclude: '/node_modules/', // Ignores node_modules for performance
         use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/env'],
-            plugins: ['@babel/plugin-proposal-class-properties'],
-          },
+          loader: 'babel-loader', // Uses Babel to transpile JS/JSX, Babel automatically picks up .babelrc
         },
       },
       {
