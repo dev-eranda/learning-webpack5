@@ -26,7 +26,7 @@ Core technologies used:
 ## Installation
 1. Clone repository:
    ```sh
-   git clone https://github.com/dev-eranda/webpack5.git
+   git clone https://github.com/dev-eranda/learning-webpack5.git
    
 2. Install dependencies:
    ```sh
