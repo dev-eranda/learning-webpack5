@@ -1,9 +1,9 @@
-# Learning webpack5
+# Learning webpack 5
 
-**Developed By:** Eranda Samarasinghe
+**Developed by:** Eranda Samarasinghe
 <hr />
 
-## Project Backgroud and Overview
+## Project Background and Overview
 This project demonstrates the use of Webpack 5 for module bundling, code splitting for faster loading, and improved caching to optimize assets and enhance performance. It also includes setting up an Express server to serve HTML pages and integrating jQuery. Additionally, the project explores Webpack 5's Module Federation for implementing Micro Frontends
 <hr />
 
@@ -11,7 +11,7 @@ This project demonstrates the use of Webpack 5 for module bundling, code splitti
 The main objectives of this application are to:
 
 1. Get a solid foundation for learning advanced Webpack features
-2. Integrate Webpack 5 with NodeJS and Express framework
+2. Integrate Webpack 5 with Node.js and Express framework
 3. Structure your code better with ES Modules and Webpack Code Splitting
 4. Use Webpack for Single Page Applications as well as Multiple Page Applications
 5. Learned the new Module Federation feature introduced in Webpack 5
@@ -20,7 +20,7 @@ The main objectives of this application are to:
 ## Technical Details
 Core technologies used: 
 
-- **Webpack5, Node.js, Express, Module Federation, Micro Frontends**
+- **Webpack 5, Node.js, Express, Module Federation, Micro Frontends**
 <hr />
 
 ## Installation
